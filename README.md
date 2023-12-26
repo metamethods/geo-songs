@@ -6,7 +6,7 @@ Custom Geometry Dash song server fully written in Rust!
 - Rust, so its very safe
 
 ## Prebuilt Binaries
-- [Artifacts]()
+All of the prebuilt binaries will be located in the [actions tab](https://github.com/metamethods/geo-songs/actions), and look for the latest workflow with a checkmark. Click on it, and you'll find all of the built artifacts!
 
 ## Building
 ### Perquisites

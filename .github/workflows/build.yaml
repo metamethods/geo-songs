@@ -17,7 +17,7 @@ jobs:
             - run: cargo test --all-features
 
     build:
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.target }}
         needs: test
 
         outputs:
@@ -25,7 +25,7 @@ jobs:
 
         strategy:
             matrix:
-                target: [x86_64-unknown-linux-gnu, x86_64-pc-windows-msvc, x86_64-apple-darwin]
+                target: [macos-latest, ubuntu-latest, windows-latest]
 
         steps:
             - uses: actions/checkout@v4
@@ -33,8 +33,8 @@ jobs:
             - id: get-version
               run: echo "version=$(cat Cargo.toml | grep version | head -n 1 | cut -d \" -f 2)" >> $GITHUB_OUTPUT
             - run: rustup target add ${{ matrix.target }}
-            - run: cargo build --release --target ${{ matrix.target }}
+            - run: cargo build --release
             - uses: actions/upload-artifact@v4
               with:
                   name: "${{ matrix.target }}-${{ steps.get-version.outputs.version }}"
-                  path: target/${{ matrix.target }}/release/geo-songs
+                  path: target/release/geo-songs

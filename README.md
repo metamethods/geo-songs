@@ -39,6 +39,7 @@ __Run the binary__, not that hard lol, but here's the usage anyways:
 
 ### Adding a song
 When wanting to add a new song, you'll have to do it in this format:
+<sub>If you dont see the songs directory, open the program just once, it'll generate one for you!</sub>
 ```
 songs
 - my-very-cool-song.mp3

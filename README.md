@@ -6,9 +6,7 @@ Custom Geometry Dash song server fully written in Rust!
 - Rust, so its very safe
 
 ## Prebuilt Binaries
-- [Releases - Windows]()
-- [Releases - Linux]()
-- [Releases - MacOS]()
+- [Artifacts]()
 
 ## Building
 ### Perquisites
@@ -18,7 +16,7 @@ Custom Geometry Dash song server fully written in Rust!
 1. Clone the repository:
 ```bash
 git clone https://github.com/metamethods/geo-songs.git
-```
+``` 
 
 2. Build the project:
 ```bash
@@ -36,7 +34,10 @@ cargo build --release --target x86_64-unknown-linux-musl
 __Run the binary__, not that hard lol, but here's the usage anyways:
 1. Find where your __Geometry Dash__ executable is located
 2. You'll have to open the file in a `hex editor` (For example) or a `text editor` <sub>I just prefer the hex editor as it doesn't look ugly when doing some stuff</sub>
-3. Find the string `https://www.boomlings.com/database/getGJSongInfo.php` and replace it with `http://localhost:8000/` (Or whatever port you're using, but __8000__ should be the default port on rocket.rs)
+3. Find the string `https://www.boomlings.com/database/getGJSongInfo.php` and replace it with `http://localhost:8000/song_data` (Or whatever port you're using, but __8000__ should be the default port on rocket.rs) __IMPORTANT:__ When replacing the strings, they MUST be the exact same size, you can see here for example:
+
+![Imagine not able to see the image](/images/replace.png)
+
 4. Save the file and run the binary, or run it from Steam
 5. Profit (again)
 

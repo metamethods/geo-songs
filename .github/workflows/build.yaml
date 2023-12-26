@@ -31,4 +31,6 @@ jobs:
             - uses: actions/upload-artifact@v4
               with:
                   name: "geo-songs-${{ matrix.target }}"
-                  path: target/release/geo-songs
+                  path: |
+                    target/release/geo-songs
+                    target/release/geo-songs.exe

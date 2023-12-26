@@ -9,3 +9,17 @@ reqwest = { version = "0.11.23", features = ["multipart"] }
 rocket = "0.5.0"
 serde = { version = "1.0.193", features = ["derive"] }
 serde_yaml = "0.9.29"
+
+# God I hate apple, i hope this stackoverflow answer is right
+# ref: https://stackoverflow.com/questions/28124221/error-linking-with-cc-failed-exit-code-1
+[target.x86_64-apple-darwin]
+rustflags = [
+  "-C", "link-arg=-undefined",
+  "-C", "link-arg=dynamic_lookup",
+]
+
+[target.aarch64-apple-darwin]
+rustflags = [
+  "-C", "link-arg=-undefined",
+  "-C", "link-arg=dynamic_lookup",
+]

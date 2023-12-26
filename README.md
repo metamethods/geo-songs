@@ -56,3 +56,6 @@ name: My Very Cool Song
 file: my-very-cool-song.mp3
 author: a very cool person
 ```
+
+## Contributing
+If you want to contribute, feel free to open a PR! I'll be happy to review it and merge it if it looks good!

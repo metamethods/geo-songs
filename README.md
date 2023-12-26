@@ -20,14 +20,10 @@ git clone https://github.com/metamethods/geo-songs.git
 
 2. Build the project:
 ```bash
-# Windows
-cargo build --release
-
-# Linux / MacOS
-cargo build --release --target x86_64-unknown-linux-musl
+cargo build # Depending on what system you are using, cargo will build the binary for it. Its kinda hard to cross build other systems without having the other system lmao
 ```
 
-3. The binary will be located in `target/release/geo-songs`
+3. The binary will be located in `target/release/geo-songs` or `target/release/geo-songs.exe`
 4. Profit
 
 ## Usage

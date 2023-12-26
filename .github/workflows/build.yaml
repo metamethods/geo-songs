@@ -32,9 +32,8 @@ jobs:
             - uses: actions-rust-lang/setup-rust-toolchain@v1
             - id: get-version
               run: echo "version=$(cat Cargo.toml | grep version | head -n 1 | cut -d \" -f 2)" >> $GITHUB_OUTPUT
-            - run: rustup target add ${{ matrix.target }}
             - run: cargo build --release
             - uses: actions/upload-artifact@v4
               with:
                   name: "${{ matrix.target }}-${{ steps.get-version.outputs.version }}"
-                  path: target/release/geo-songs
+                  path: target/release/geo-song

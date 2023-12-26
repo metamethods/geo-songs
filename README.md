@@ -39,7 +39,7 @@ __Run the binary__, not that hard lol, but here's the usage anyways:
 
 ### Adding a song
 When wanting to add a new song, you'll have to do it in this format:
-<sub>If you dont see the songs directory, open the program just once, it'll generate one for you!</sub>
+<sub>If you don't see the songs directory, open the program just once, it'll generate one for you!</sub>
 ```
 songs
 - my-very-cool-song.mp3
@@ -53,6 +53,11 @@ name: My Very Cool Song
 file: my-very-cool-song.mp3
 author: a very cool person
 ```
+
+After all of that, you can input the id (In negative form i.e. if the Id of the song is 1, then you should put -1), and it'll show up!
+
+## Super Duper Important Thing
+You __MUST__ have the program open at all times, or geometry dash will not be able to load any of the songs. You can figure out how to make it run in the background and stuff.
 
 ## Contributing
 If you want to contribute, feel free to open a PR! I'll be happy to review it and merge it if it looks good!

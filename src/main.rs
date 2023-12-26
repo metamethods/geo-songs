@@ -39,6 +39,12 @@ struct SongYaml {
   file: String
 }
 
+fn create_directory(directory: &str) {
+  if !fs::metadata(directory).is_ok() {
+    fs::create_dir(directory).unwrap();
+  }
+}
+
 fn format_song(song_data: SongData) -> String {
   format!("1~|~{}~|~2~|~{}~|~3~|~0~|~4~|~{}~|~5~|~{:.2}~|~6~|~~|~7~|~~|~8~|~0~|~10~|~{}", 
     song_data.id,
@@ -125,6 +131,8 @@ async fn get_local_song(song_name: &str) -> Result<NamedFile, NotFound<String>> 
 
 #[launch]
 fn rocket() -> _ {
+  create_directory(SONGS_DIRECTORY); // Just incase if the directory doesn't exist
+
   rocket::build()
     .mount("/song_data", routes![song_data])
     .mount("/get_song", routes![get_local_song])
